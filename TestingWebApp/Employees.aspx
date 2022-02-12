@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <h1> Employees in our Company  </h1>
+            <h1> Students in our Company  </h1>
             <asp:GridView ID="GridView1" AutoGenerateColumns ="true" runat="server">
 
             </asp:GridView>

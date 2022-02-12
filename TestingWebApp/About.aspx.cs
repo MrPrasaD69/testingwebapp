@@ -26,7 +26,7 @@ namespace TestingWebApp
            ,[Lastname]
            ,[Contact])
             VALUES
-           ('"+eName.Text+"', '"+eLastname.Text+"', '"+eContact+"')", con);
+           ('"+eName.Text+"', '"+eLastname.Text+"', '"+eContact.Text+"')", con);
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();

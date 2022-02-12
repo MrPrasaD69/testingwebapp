@@ -15,7 +15,7 @@ namespace TestingWebApp
         protected void Page_Load(object sender, EventArgs e)
         {
             string dbconnectionString = ConfigurationManager.ConnectionStrings["DataBaseConnectionString"].ConnectionString;
-            var queryString = "SELECT * FROM Employees";
+            var queryString = "SELECT * FROM SaveTable";
             var dbConnection = new SqlConnection(dbconnectionString);
             var dataAdapter = new SqlDataAdapter(queryString, dbConnection);
             var commandBuilder = new SqlCommandBuilder(dataAdapter);
