@@ -11,12 +11,11 @@ namespace MyApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            If session is empty, Send to Login / Signup
+            //If session is empty, Send to Login / Signup
             if (Session["Name"] == null)
             {
                 Response.Redirect("SignUp.aspx");
             }
-
             try
             {  
                 if(Session["Name"] != null)
@@ -24,6 +23,14 @@ namespace MyApp
                     namelbl.Visible = true;
                     logoutbtn.Visible = true;
                     namelbl.InnerText = "Hello : " + Session["Name"].ToString();
+
+                    //taking username via querystring
+                    unamelbl.Visible = true;
+                    //unamelbl.InnerText = "Your Username is : " + Request.QueryString["UserName"];
+                    unamelbl.InnerText = "Your Username is : " + Session["UName"];
+                    pidlbl.Visible = true;
+                    //pidlbl.InnerText = "Your MemberID is : " + Request.QueryString["PID"];
+                    pidlbl.InnerText = "Your MemberID is : " +Session["PID"].ToString();
                 }
             }
             catch (Exception ex)
@@ -32,10 +39,11 @@ namespace MyApp
             }
         }
 
+        //LOG OUT FUNCTION
         protected void logoutbtn_Click(object sender, EventArgs e)
         {
             Session.Abandon();
-            Response.Redirect("SignUp.aspx");
+            Response.Redirect("Login.aspx");
         }
     }
 }

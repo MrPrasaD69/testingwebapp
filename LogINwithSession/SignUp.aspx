@@ -2,6 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <style>
+        #badgelbl{
+            position:relative;
+            left:290px;
+        }
         
     </style>
 
@@ -15,14 +19,14 @@
                   <div class="row">
                      <div class="col">
                         <center>
-                           <img width="100px" src="user.jpg"/>
+                           <img id="imglbl" width="100px" src="user.jpg"/>
                         </center>
                      </div>
                   </div>
                   <div class="row">
                      <div class="col">
                         <center>
-                           <h4>Member Sign Up</h4>
+                           <h4 id="htxt" >Member Sign Up</h4>
                         </center>
                      </div>
                   </div>
@@ -32,7 +36,11 @@
                      </div>
                   </div>
                   <div class="row">
-                     <div class="col-md-6">
+                      <div class="col-md-3">
+                          <Label>PID</Label>
+                          <asp:TextBox CssClass="form-control" runat="server" ID="pidbox" placeholder="Your PID"></asp:TextBox>
+                      </div>
+                     <div class="col-md-3">
                         <label>Name</label>
                         <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="eName" runat="server" placeholder="Your Name"></asp:TextBox>
@@ -76,40 +84,17 @@
                       <div class="col-md-3">
                        </div>
                    </div>
+
+                   <%--<div class="row">
+                       <asp:TextBox runat="server" ID="searchbox" Placeholder="Search"></asp:TextBox>
+                       <asp:Button runat="server" ID="searchbtn" Text="Search" CssClass="btn btn-primary" OnClick="searchbtn_Click"></asp:Button>
+                       <asp:GridView runat="server" ID="SearchView">
+                           
+                       </asp:GridView>
+                   </div>--%>
+                   
    <%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%>
-                  <div class="row">
-                     <div class="col">
-                        <center>
-                           <span class="badge badge-pill badge-info">Login Credentials</span>
-                        </center>
-                     </div>
-                  </div>
-                  <div class="row">
-                     <div class="col-md-6">
-                        <label>UserName</label>
-                        <div class="form-group">
-                           <asp:TextBox class="form-control" ID="username" runat="server" placeholder="User name"></asp:TextBox>
-                             <%--<asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator1" controltovalidate="username" errormessage="Please enter your Username!" />--%>
-                        </div>
-                     </div>
-                     <div class="col-md-6">
-                        <label>Password</label>
-                        <div class="form-group">
-                           <asp:TextBox class="form-control" ID="password" onkeydown="return nospacetext(event)" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="row">
-                      <div class="col-md-3">
-                      </div>
-                             <div class="col-md-6">
-                                <div class="form-group">
-                                     <asp:Button class="btn btn-success btn-block btn-lg" ID="logbtn" runat="server" Text="Login IN" OnClick="logbtn_Click" />
-                                  </div>
-                             </div>
-                       <div class="col-md-3">
-                       </div>
-                  </div>
+                  
 
                  </div>
                </div>
